@@ -1,13 +1,14 @@
 import {
   IconType,
+  SiAdobeacrobatreader,
   SiGithub,
   SiGmail,
   SiLinkedin,
-  SiMedium,
 } from '@icons-pack/react-simple-icons'
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 
 export default function Links() {
-  const links: { icon: IconType; href: string }[] = [
+  const links: { icon: IconType; href: string, tooltip?: string }[] = [
     {
       icon: SiGmail,
       href: 'mailto:chahine.benlahcen@gmail.com',
@@ -20,17 +21,27 @@ export default function Links() {
       icon: SiLinkedin,
       href: 'https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/',
     },
+    {
+      icon: SiAdobeacrobatreader,
+      href: '/cv.pdf',
+      tooltip: 'Download CV',
+    },
   ]
 
   return (
-    <div className="mr-auto mt-20 flex w-full flex-wrap items-center gap-10">
-      {links.map((link, id) => {
-        return (
-          <a target="_blank" key={id} href={link.href}>
-            <link.icon title="" />
-          </a>
-        )
-      })}
-    </div>
+    <TooltipProvider>
+      <div className="mr-auto mt-14 flex w-full flex-wrap items-center gap-10">
+        {links.map((link, id) => (
+          <Tooltip key={id}>
+            <TooltipTrigger asChild>
+              <a target="_blank" href={link.href}>
+                <link.icon title="" />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>{link.tooltip}</TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
+    </TooltipProvider>
   )
 }
