@@ -21,6 +21,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={montserrat.className}>
           <ThemeProvider attribute="class" disableTransitionOnChange>
+            <div className="texture"></div>
             <Nav />
             <div className="text-text dark:text-darkText mx-auto w-[750px] max-w-full px-5 pb-10 pt-28">
               {children}
