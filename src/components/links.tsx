@@ -32,14 +32,20 @@ export default function Links() {
     <TooltipProvider>
       <div className="mr-auto mt-14 flex w-full flex-wrap items-center gap-10">
         {links.map((link, id) => (
-          <Tooltip key={id}>
-            <TooltipTrigger asChild>
-              <a target="_blank" href={link.href}>
-                <link.icon title="" />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent>{link.tooltip}</TooltipContent>
-          </Tooltip>
+          link.tooltip ? (
+            <Tooltip key={id}>
+              <TooltipTrigger asChild>
+                <a target="_blank" href={link.href}>
+                  <link.icon title="" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>{link.tooltip}</TooltipContent>
+            </Tooltip>
+          ) : (
+            <a key={id} target="_blank" href={link.href}>
+              <link.icon title="" />
+            </a>
+          )
         ))}
       </div>
     </TooltipProvider>
