@@ -1,10 +1,12 @@
-const PAST_ROLES: {
-  company: string
-  role: string
-  description: string
-  startDate: string
-  endDate: string
-}[] = [
+export interface Role {
+  company: string;
+  role: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+}
+
+const PAST_ROLES: Role[] = [
   {
     company: 'Veepee',
     role: 'Software Engineer - R&D (Apprenticeship)',
@@ -23,4 +25,4 @@ const PAST_ROLES: {
   },
 ]
 
-export default PAST_ROLES
+export default PAST_ROLES;

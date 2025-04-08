@@ -1,10 +1,12 @@
-const PROJECTS: {
-  name: string
-  description: string
-  previewImage: string
-  repoUrl: string
-  liveLink: string
-}[] = [
+export interface Project {
+  name: string;
+  description: string;
+  previewImage: string;
+  repoUrl: string;
+  liveLink: string;
+}
+
+const PROJECTS: Project[] = [
   {
     name: 'Wikipedia Mapper',
     description: 'A Wikipedia page mapping tool written in Rust.',
@@ -35,4 +37,4 @@ const PROJECTS: {
   },
 ]
 
-export default PROJECTS
+export default PROJECTS;

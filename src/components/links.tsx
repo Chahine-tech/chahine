@@ -6,9 +6,14 @@ import {
   SiLinkedin,
 } from '@icons-pack/react-simple-icons'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
+interface LinkItem {
+  icon: IconType
+  href: string
+  tooltip?: string
+}
 
 export default function Links() {
-  const links: { icon: IconType; href: string, tooltip?: string }[] = [
+  const links: LinkItem[] = [
     {
       icon: SiGmail,
       href: 'mailto:chahine.benlahcen@gmail.com',

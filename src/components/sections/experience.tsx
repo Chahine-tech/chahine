@@ -1,13 +1,13 @@
-import PAST_ROLES from '@/data/experience'
+import PAST_ROLES, { Role } from '@/data/experience'
 
 export default function Experience() {
   return (
     <div className="mb-16">
       <h2 className="mb-8 text-xl font-heading sm:text-2xl">Experience</h2>
 
-      {PAST_ROLES.map((role, id) => {
+      {PAST_ROLES.map((role: Role, id: number) => {
         return (
-          <div className="mb-8" key={id}>
+          <div className="mb-8" key={`${role.company}-${id}`}>
             <h3 className="text-lg font-heading sm:text-xl">
               {role.role} @ {role.company}
             </h3>
