@@ -8,6 +8,13 @@ export interface Project {
 
 const PROJECTS: Project[] = [
   {
+    name: 'Prox',
+    description: 'Prox is a lightweight, high-performance reverse proxy server written in Rust.',
+    liveLink: '#',
+    previewImage: '/project5.png',
+    repoUrl: 'https://github.com/Chahine-tech/prox',
+  },
+  {
     name: 'Wikipedia Mapper',
     description: 'A Wikipedia page mapping tool written in Rust.',
     liveLink: '#',
