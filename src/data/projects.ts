@@ -8,6 +8,13 @@ export interface Project {
 
 const PROJECTS: Project[] = [
   {
+    name: 'Beacon',
+    description: 'Beacon is a high-performance, real-time log aggregation system built with Elixir, designed to compete with ELK stack while offering better real-time capabilities and resource efficiency. It can handle millions of log entries per second with true real-time processing and alerting.',
+    liveLink: '#',
+    previewImage: '/project6.png',
+    repoUrl: 'https://github.com/Chahine-tech/beacon',
+  },
+  {
     name: 'Prox',
     description: 'Prox is a lightweight, high-performance reverse proxy server written in Rust.',
     liveLink: '#',
