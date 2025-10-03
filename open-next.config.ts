@@ -1,6 +1,5 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare/config";
 
 export default defineCloudflareConfig({
-  incrementalCache: "dummy",
-  tagCache: "dummy",
+  // Remove dummy cache for production
 });
