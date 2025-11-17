@@ -25,7 +25,7 @@ const PAST_ROLES: Role[] = [
   },
   {
     company: 'Adcoin',
-    role: 'Software Engineer (iternship)',
+    role: 'Software Engineer (Iternship)',
     description:
       'Developed and maintained software solutions in a fintech startup.',
     startDate: 'April 2022',
