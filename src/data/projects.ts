@@ -49,6 +49,13 @@ const PROJECTS: Project[] = [
     previewImage: '/project4.png',
     repoUrl: '#',
   },
+  {
+    name: 'SQLens',
+    description: 'A powerful SQL query analyzer and optimizer supporting MySQL, PostgreSQL, SQL Server, SQLite, and Oracle"',
+    liveLink: '#',
+    previewImage: '/project7.png',
+    repoUrl: 'https://github.com/Chahine-tech/sqlens',
+  }
 ]
 
 export default PROJECTS;
