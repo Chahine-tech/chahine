@@ -17,19 +17,11 @@ const PAST_ROLES: Role[] = [
   },
   {
     company: 'Adcoin',
-    role: 'Software Engineer (Apprenticeship)',
-    description:
-      'Developed and maintained software solutions in a fintech startup.',
-    startDate: 'September 2022',
-    endDate: 'August 2023',
-  },
-  {
-    company: 'Adcoin',
-    role: 'Software Engineer (Iternship)',
+    role: 'Software Engineer (Internship → Apprenticeship)',
     description:
       'Developed and maintained software solutions in a fintech startup.',
     startDate: 'April 2022',
-    endDate: 'August 2022',
+    endDate: 'September 2023',
   },
 ]
 
