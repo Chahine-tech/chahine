@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={montserrat.className}>
           <ThemeProvider attribute="class" disableTransitionOnChange>
             <div className="texture"></div>
