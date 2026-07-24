@@ -1,58 +1,55 @@
 import {
   IconType,
-  SiAdobeacrobatreader,
   SiGithub,
   SiGmail,
   SiLinkedin,
 } from '@icons-pack/react-simple-icons'
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
+import { FileText } from 'lucide-react'
+
 interface LinkItem {
-  icon: IconType
+  label: string
+  icon: IconType | typeof FileText
   href: string
-  tooltip?: string
 }
 
-export default function Links() {
-  const links: LinkItem[] = [
-    {
-      icon: SiGmail,
-      href: 'mailto:chahine.benlahcen@gmail.com',
-    },
-    {
-      icon: SiGithub,
-      href: 'https://github.com/Chahine-tech',
-    },
-    {
-      icon: SiLinkedin,
-      href: 'https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/',
-    },
-    {
-      icon: SiAdobeacrobatreader,
-      href: '/cv.pdf',
-      tooltip: 'Download CV',
-    },
-  ]
+const links: LinkItem[] = [
+  {
+    label: 'github',
+    icon: SiGithub,
+    href: 'https://github.com/Chahine-tech',
+  },
+  {
+    label: 'linkedin',
+    icon: SiLinkedin,
+    href: 'https://www.linkedin.com/in/chahine-benlahcen-tlemcani-999031202/',
+  },
+  {
+    label: 'email',
+    icon: SiGmail,
+    href: 'mailto:chahine.benlahcen@gmail.com',
+  },
+  {
+    label: 'cv',
+    icon: FileText,
+    href: '/cv.pdf',
+  },
+]
 
+export default function Links() {
   return (
-    <TooltipProvider>
-      <div className="mr-auto mt-14 flex w-full flex-wrap items-center gap-10">
-        {links.map((link, id) => (
-          link.tooltip ? (
-            <Tooltip key={id}>
-              <TooltipTrigger asChild>
-                <a target="_blank" href={link.href}>
-                  <link.icon title="" />
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>{link.tooltip}</TooltipContent>
-            </Tooltip>
-          ) : (
-            <a key={id} target="_blank" href={link.href}>
-              <link.icon title="" />
-            </a>
-          )
-        ))}
-      </div>
-    </TooltipProvider>
+    <div className="mt-8 flex flex-wrap items-center gap-2.5">
+      {links.map((link) => (
+        <a
+          key={link.label}
+          href={link.href}
+          target={link.href.startsWith('http') ? '_blank' : undefined}
+          rel="noreferrer"
+          className="group inline-flex items-center gap-2 rounded-[4px] border border-border bg-surface-2 px-3 py-1.5 text-sm text-muted transition-all hover:-translate-y-0.5 hover:border-border-strong hover:text-accent"
+        >
+          <link.icon className="h-4 w-4" title="" />
+          <span>{link.label}</span>
+        </a>
+      ))}
+    </div>
   )
 }

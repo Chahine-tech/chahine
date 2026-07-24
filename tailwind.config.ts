@@ -10,40 +10,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        main: '#FD9745',
-        mainAccent: '#fc7303', // not needed for shadcn components
-        overlay: 'rgba(0,0,0,0.8)',
-
-        // light mode
-        bg: '#fff4e0',
-        text: '#000',
-        border: '#000',
-
-        // dark mode
-        darkBg: '#272933',
-        darkText: '#eeefe9',
-        darkBorder: '#000',
-        secondaryBlack: '#212121', // opposite of plain white, not used pitch black because borders and box-shadows are that color
+        bg: 'var(--bg)',
+        surface: 'var(--surface)',
+        'surface-2': 'var(--surface-2)',
+        border: 'var(--border)',
+        'border-strong': 'var(--border-strong)',
+        text: 'var(--text)',
+        muted: 'var(--muted)',
+        faint: 'var(--faint)',
+        accent: 'var(--accent)',
+        'accent-dim': 'var(--accent-dim)',
+        prompt: 'var(--prompt)',
+      },
+      fontFamily: {
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        base: '5px',
+        base: '6px',
       },
-      boxShadow: {
-        light: '4px 4px 0px 0px #000',
-        dark: '4px 4px 0px 0px #000',
+      keyframes: {
+        blink: {
+          '0%, 49%': { opacity: '1' },
+          '50%, 100%': { opacity: '0' },
+        },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
       },
-      translate: {
-        boxShadowX: '4px',
-        boxShadowY: '4px',
-        reverseBoxShadowX: '-4px',
-        reverseBoxShadowY: '-4px',
-      },
-      fontWeight: {
-        base: '500',
-        heading: '700',
-      },
-      screens: {
-        w450: { raw: '(max-width: 450px)' },
+      animation: {
+        blink: 'blink 1.1s step-end infinite',
+        'fade-up': 'fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both',
+        'fade-in': 'fade-in 0.6s ease both',
       },
     },
   },

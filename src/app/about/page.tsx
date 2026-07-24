@@ -1,25 +1,50 @@
 import Experience from '@/components/sections/experience'
+import { TerminalWindow } from '@/components/terminal/window'
 
 export default function About() {
   return (
-    <div className="font-base">
-      <h1 className="mb-8 text-2xl font-heading sm:text-4xl">About</h1>
-      <div className="mb-10 text-base sm:text-lg">
-        <p>
-          I am a passionate Software Engineer with a strong interest in research and innovation. 
-          Currently working in the R&D team at Veepee, I specialize in Generative AI, exploring and 
-          developing cutting-edge solutions. Previously, I worked at Adcoin, a fintech startup, 
-          where I gained experience in software development and problem-solving.  
-        </p>
-        <p className="mt-4">
-          I enjoy tackling complex challenges, learning new technologies, and contributing to 
-          impactful projects. My expertise includes AI, backend development, and scalable 
-          software architecture. I am always eager to explore new opportunities and collaborate 
-          on exciting initiatives.
-        </p>
-      </div>
+    <div className="space-y-6">
+      <TerminalWindow title="chahine — ~/about">
+        <div className="mb-4 text-sm">
+          <span className="select-none">
+            <span className="text-prompt">chahine@paris</span>
+            <span className="text-muted">:</span>
+            <span className="text-accent">~/about</span>
+            <span className="text-muted">$ </span>
+          </span>
+          <span className="text-text">cat readme.md</span>
+        </div>
 
-      <Experience />
+        <div className="space-y-4 font-sans text-[15px] leading-relaxed text-muted sm:text-base">
+          <p>
+            I&apos;m a software engineer based in Paris, drawn to systems,
+            research, and building things from first principles. I spent nearly
+            two years in{' '}
+            <span className="text-text">Veepee&apos;s R&amp;D team</span>{' '}
+            working on Generative AI, and before that shipped software at{' '}
+            <span className="text-text">Adcoin</span>, a fintech startup. Most
+            recently I{' '}
+            <span className="text-text">co-founded a startup</span> with a
+            friend — wearing every hat from product to architecture — and
+            I&apos;m now looking for my next full-time role.
+          </p>
+          <p>
+            I work across the stack — from product engineering to backend and
+            systems: distributed systems, developer tooling, and infrastructure.
+            Day to day that&apos;s mostly{' '}
+            <span className="text-text">TypeScript</span> and{' '}
+            <span className="text-text">Go</span>, with{' '}
+            <span className="text-text">Rust</span> for the systems-heavy work,
+            and increasingly at the intersection with AI. I like hard problems,
+            learning new stacks for the sake of it, and shipping things that are
+            correct and fast.
+          </p>
+        </div>
+      </TerminalWindow>
+
+      <TerminalWindow title="chahine — ~/about/experience">
+        <Experience />
+      </TerminalWindow>
     </div>
   )
 }

@@ -1,82 +1,125 @@
 export interface Project {
-  name: string;
-  description: string;
-  previewImage: string;
-  repoUrl: string;
-  liveLink: string;
+  name: string
+  description: string
+  language: string
+  stars?: number
+  repoUrl: string
+  liveLink?: string
 }
 
 const PROJECTS: Project[] = [
   {
-    name: 'Lumen',
-    description: 'Production-ready airgap Kubernetes environment — 3-zone architecture, 5-layer security (OPA + PSS + NetworkPolicies + Falco + Cosign), Vault HA + cert-manager mTLS, full observability (Prometheus, Loki, Tempo), GitOps with ArgoCD, canary CI/CD via Gitea Actions + Argo Rollouts, chaos testing with Chaos Mesh, and IaC via Terraform + Ansible.',
-    liveLink: '#',
-    previewImage: '/project7.png',
-    repoUrl: '#',
+    name: 'meridian',
+    description:
+      'Self-hosted real-time sync engine with CRDT primitives, WebSocket live queries, and a TypeScript/React SDK.',
+    language: 'Rust',
+    stars: 4,
+    repoUrl: 'https://github.com/Chahine-tech/meridian',
   },
   {
-    name: 'SQLens',
-    description: 'A powerful SQL query analyzer and optimizer supporting MySQL, PostgreSQL, SQL Server, SQLite, and Oracle"',
-    liveLink: '#',
-    previewImage: '/project7.png',
-    repoUrl: 'https://github.com/Chahine-tech/sqlens',
-  },
-  {
-    name: 'Nexus',
-    description: 'Distributed search engine built in Rust — QUIC transport, hybrid BM25+vector scoring, gossip-based PageRank, ε-differential privacy"',
-    liveLink: '#',
-    previewImage: '/project7.png',
+    name: 'nexus',
+    description:
+      'Distributed search engine — QUIC transport, hybrid BM25 + vector scoring, gossip-based PageRank, ε-differential privacy.',
+    language: 'Rust',
     repoUrl: 'https://github.com/Chahine-tech/nexus',
   },
   {
-    name: 'Airgap pkg',
-    description: 'Air-gapped package manager for securely transferring, signing, and verifying packages across offline systems.',
-    liveLink: '#',
-    previewImage: '/project7.png',
-    repoUrl: 'https://github.com/Chahine-tech/airgap-pkg',
+    name: 'flux',
+    description:
+      'Canary deployments on a durable Temporal workflow in Effect v4 — step traffic, watch metrics, auto rollback on regression. No Kubernetes.',
+    language: 'TypeScript',
+    repoUrl: 'https://github.com/Chahine-tech/flux',
   },
   {
-    name: 'Beacon',
-    description: 'Beacon is a high-performance, real-time log aggregation system built with Elixir, designed to compete with ELK stack while offering better real-time capabilities and resource efficiency. It can handle millions of log entries per second with true real-time processing and alerting.',
-    liveLink: '#',
-    previewImage: '/project6.png',
-    repoUrl: 'https://github.com/Chahine-tech/beacon',
+    name: 'lumen',
+    description:
+      'Production-like air-gapped Kubernetes cluster — 5-layer security (OPA, PSS, NetworkPolicies, Falco, Cosign), Vault HA + mTLS, full observability, GitOps with ArgoCD.',
+    language: 'Go',
+    repoUrl: 'https://github.com/Chahine-tech/lumen',
   },
   {
-    name: 'Prox',
-    description: 'Prox is a lightweight, high-performance reverse proxy server written in Rust.',
-    liveLink: '#',
-    previewImage: '/project5.png',
+    name: 'os',
+    description:
+      'x86_64 hobby operating system in Zig with a Lua shell, networking, and disk persistence — built for fun.',
+    language: 'Zig',
+    repoUrl: 'https://github.com/Chahine-tech/os',
+  },
+  {
+    name: 'prox',
+    description:
+      'Lightweight, high-performance reverse proxy server written in Rust.',
+    language: 'Rust',
+    stars: 3,
     repoUrl: 'https://github.com/Chahine-tech/prox',
   },
   {
-    name: 'Wikipedia Mapper',
-    description: 'A Wikipedia page mapping tool written in Rust.',
-    liveLink: '#',
-    previewImage: '/project1.png',
-    repoUrl: 'https://github.com/Chahine-tech/wikipedia-mapper',
+    name: 'sqlens',
+    description:
+      'SQL query analyzer and optimizer supporting MySQL, PostgreSQL, SQL Server, SQLite, and Oracle.',
+    language: 'Go',
+    stars: 6,
+    repoUrl: 'https://github.com/Chahine-tech/sqlens',
   },
   {
-    name: 'Rusty Vault',
-    description: 'A Rust-based SSH agent enabling secure key management with hardware-backed cryptography on Windows.',
-    liveLink: '#',
-    previewImage: '/project2.png',
-    repoUrl: 'https://github.com/Chahine-tech/rustyVault',
+    name: 'cargo-regress',
+    description:
+      'Binary size regression analysis for Rust projects — compare symbol-level bloat between git commits.',
+    language: 'Rust',
+    repoUrl: 'https://github.com/Chahine-tech/cargo-regress',
   },
   {
-    name: 'Minikeyvalue',
-    description: 'Lightweight key-value store written in Go',
-    liveLink: '#',
-    previewImage: '/project3.png',
-    repoUrl: 'https://github.com/Chahine-tech/minikeyvalue',
+    name: 'arr-sync',
+    description:
+      'Daemon that resyncs qBittorrent when Sonarr/Radarr renames or moves files — matches by BitTorrent piece hash, not filename.',
+    language: 'Gleam',
+    stars: 4,
+    repoUrl: 'https://github.com/Chahine-tech/arr-sync',
   },
   {
-    name: 'Adecur',
-    description: 'Website for ADECUR, an association supporting condominium unions connected to the Massy-Antony district heating network.',
-    liveLink: 'https://adecur.fr/',
-    previewImage: '/project4.png',
+    name: 'airgap-pkg',
+    description:
+      'Air-gapped package manager for securely transferring, signing, and verifying packages across offline systems.',
+    language: 'Go',
+    stars: 4,
+    repoUrl: 'https://github.com/Chahine-tech/airgap-pkg',
+  },
+  {
+    name: 'beacon',
+    description:
+      'Distributed, real-time log aggregation system in Elixir — designed to rival the ELK stack on latency and resource efficiency.',
+    language: 'Elixir',
+    repoUrl: 'https://github.com/Chahine-tech/beacon',
+  },
+  {
+    name: 'orbit',
+    description:
+      'Desktop workspace manager for AI coding CLIs — isolated sessions per project.',
+    language: 'TypeScript',
+    repoUrl: 'https://github.com/Chahine-tech/Orbit',
+  },
+  {
+    name: 'promptci',
+    description:
+      'Pytest for LLM prompts — write tests, detect regressions, run them in CI.',
+    language: 'Python',
+    repoUrl: 'https://github.com/Chahine-tech/PromptCI',
+  },
+  {
+    name: 'swiftspeed',
+    description:
+      'Minimal, native macOS menu bar app for testing your internet speed — download, upload, ping.',
+    language: 'Swift',
+    stars: 1,
+    repoUrl: 'https://github.com/Chahine-tech/fast',
+  },
+  {
+    name: 'adecur',
+    description:
+      'Website for ADECUR, an association supporting condominium unions on the Massy-Antony district heating network.',
+    language: 'TypeScript',
     repoUrl: '#',
+    liveLink: 'https://adecur.fr/',
   },
 ]
 
-export default PROJECTS;
+export default PROJECTS
