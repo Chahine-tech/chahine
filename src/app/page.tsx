@@ -1,6 +1,7 @@
 import Links from '@/components/links'
 import { TerminalWindow } from '@/components/terminal/window'
 import { Typewriter } from '@/components/terminal/typewriter'
+import { BootGate } from '@/components/terminal/boot-gate'
 
 function Prompt() {
   return (
@@ -16,6 +17,7 @@ function Prompt() {
 export default function Home() {
   return (
     <TerminalWindow title="chahine@paris: ~">
+      <BootGate>
       <div className="space-y-1 text-sm leading-relaxed sm:text-[15px]">
         <p>
           <Prompt />
@@ -70,6 +72,7 @@ export default function Home() {
           <span className="animate-blink inline-block h-[1.1em] w-[0.55em] bg-accent align-[-0.18em]" />
         </p>
       </div>
+      </BootGate>
     </TerminalWindow>
   )
 }

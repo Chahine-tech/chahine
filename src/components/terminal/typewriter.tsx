@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { playKey } from '@/lib/sound'
 
 interface TypewriterProps {
   text: string
@@ -31,9 +32,12 @@ export function Typewriter({
 
   useEffect(() => {
     if (!started || count >= text.length) return
-    const t = setTimeout(() => setCount((c) => c + 1), speed)
+    const t = setTimeout(() => {
+      setCount((c) => c + 1)
+      if (text[count] !== ' ') playKey()
+    }, speed)
     return () => clearTimeout(t)
-  }, [started, count, text.length, speed])
+  }, [started, count, text.length, speed, text])
 
   return (
     <span className={className}>

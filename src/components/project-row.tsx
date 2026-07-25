@@ -13,6 +13,7 @@ export function ProjectRow({
 
   return (
     <div
+      data-sfx="hover"
       className="animate-fade-up group relative rounded-base border border-transparent px-3 py-4 transition-colors hover:border-border hover:bg-surface-2/60"
       style={{ animationDelay: `${Math.min(index * 60, 600)}ms` }}
     >
@@ -50,6 +51,7 @@ export function ProjectRow({
             href={project.repoUrl}
             target="_blank"
             rel="noreferrer"
+            data-sfx="hover click"
             className="inline-flex items-center gap-1 text-faint transition-colors hover:text-accent"
           >
             cd repo <ArrowUpRight className="h-3 w-3" />
@@ -60,6 +62,7 @@ export function ProjectRow({
             href={project.liveLink}
             target="_blank"
             rel="noreferrer"
+            data-sfx="hover click"
             className="inline-flex items-center gap-1 text-faint transition-colors hover:text-accent"
           >
             open live <ArrowUpRight className="h-3 w-3" />

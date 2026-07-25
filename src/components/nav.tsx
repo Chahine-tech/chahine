@@ -23,6 +23,7 @@ export default function Nav() {
             <Link
               key={link.path}
               href={link.path}
+              data-sfx="hover click"
               className={clsx(
                 'rounded-[4px] px-3 py-1.5 transition-colors',
                 active

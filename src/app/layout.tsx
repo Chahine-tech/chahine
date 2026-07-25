@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/nav'
 import { ViewTransitions } from 'next-view-transitions'
 import { ThemeProvider } from '@/components/theme-provider'
+import { SoundEffects } from '@/components/sound-effects'
 
 const mono = JetBrains_Mono({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
             enableSystem={false}
             disableTransitionOnChange
           >
+            <SoundEffects />
             <Nav />
             <main className="relative z-10 mx-auto w-[760px] max-w-full px-5 pb-24 pt-28">
               {children}
