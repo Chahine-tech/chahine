@@ -1,0 +1,7 @@
+# pnpm 11 fails CI installs (strictDepBuilds defaults to true) when dependencies
+# with postinstall/build scripts aren't explicitly approved. The offending ones
+# here — esbuild, sharp, unrs-resolver, workerd — are native build scripts that
+# are NOT needed for the static `next build` export (verified locally). Downgrade
+# the hard failure to a warning; the scripts stay unrun, which is the safer
+# outcome than approving them all.
+strictDepBuilds: false
