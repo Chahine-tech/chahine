@@ -9,10 +9,10 @@ export interface Role {
 
 const PAST_ROLES: Role[] = [
   {
-    company: 'Stealth Startup',
+    company: 'Foxcase',
     role: 'Co-Founder & Software Engineer',
     description:
-      'Co-founded and built a startup from the ground up with a partner — product, architecture, and full-stack engineering end to end. Now looking for my next full-time role.',
+      'Co-founded and built Foxcase from the ground up with a partner — product, architecture, and full-stack engineering end to end. Now looking for my next full-time role.',
     startDate: 'Sep 2025',
     endDate: 'Present',
     current: true,

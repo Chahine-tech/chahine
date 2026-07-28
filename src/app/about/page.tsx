@@ -23,10 +23,10 @@ export default function About() {
             <span className="text-text">Veepee&apos;s R&amp;D team</span>{' '}
             working on Generative AI, and before that shipped software at{' '}
             <span className="text-text">Adcoin</span>, a fintech startup. Most
-            recently I{' '}
-            <span className="text-text">co-founded a startup</span> with a
-            friend — wearing every hat from product to architecture — and
-            I&apos;m now looking for my next full-time role.
+            recently I co-founded{' '}
+            <span className="text-text">Foxcase</span> with a friend — wearing
+            every hat from product to architecture — and I&apos;m now looking
+            for my next full-time role.
           </p>
           <p>
             I work across the stack — from product engineering to backend and
