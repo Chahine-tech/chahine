@@ -1,60 +1,70 @@
-# Chahine - Portfolio
+# Chahine — Portfolio
 
-My personal portfolio website built with Next.js and Tailwind CSS, featuring a clean neobrutalism design style.
+Personal portfolio of Chahine Benlahcen Tlemcani, a software engineer based in
+Paris. A terminal-inspired, monospace design with light and dark themes.
 
-## Overview
+## Features
 
-This portfolio showcases my work as a software engineer based in Paris. It includes:
+- **Terminal aesthetic** — command-prompt layout, monospace type, subtle grid
+  background, amber/green accents.
+- **Animated intro** — a "boot" gate on first visit, then the `whoami` line
+  types itself out with a blinking cursor.
+- **Synthesized UI sounds** — low-latency Web Audio blips on hover/click and a
+  keystroke tick while typing (no audio assets shipped; on by default, unlocked
+  on first interaction per browser autoplay rules).
+- **Light / dark themes** — light by default, toggle in the nav, persisted.
+- **Page transitions** — via the View Transitions API.
 
-- Home page with introduction and social links
-- Work projects showcase
-- About section with personal information
-- Skills overview
+## Tech stack
 
-## Technology Stack
-
-- **Framework**: Next.js
-- **Styling**: Tailwind CSS
-- **Typography**: Custom font selection
-- **Icons**: Simple Icons
+- **Framework**: Next.js 16 (App Router, static export via `output: 'export'`)
+- **UI**: React 19
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
+- **Fonts**: JetBrains Mono (UI) + Inter (prose), self-hosted via `next/font`
+- **Icons**: Simple Icons + Lucide
+- **Hosting**: Cloudflare Pages (static `out/`)
 
 ## Development
 
-To run the project locally:
+Uses **pnpm** (pinned via `packageManager`).
 
 ```bash
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
+pnpm install     # install dependencies
+pnpm dev         # start the dev server (http://localhost:3000)
+pnpm build       # static production build -> ./out
+pnpm lint        # ESLint (flat config)
 ```
 
 ## Structure
 
-- `src/app/page.tsx` - Main landing page
-- `src/app/work/page.tsx` - Projects showcase
-- `src/app/about/page.tsx` - About me information
-- `src/components/` - Reusable UI components
-- `src/data/` - Content configuration files
-
-## Customization
-
-The site uses a consistent neobrutalism design language with:
-- Bold typography
-- Strong shadow effects
-- Clean spacing
-- Texture backgrounds
-
-## Deployment
-
-The site is built to be easily deployed on Vercel or similar platforms.
-
-```bash
-# Build for production
-pnpm build
 ```
+src/
+  app/
+    page.tsx            # home — terminal intro + links
+    about/page.tsx      # about + experience timeline
+    work/page.tsx       # selected projects
+    layout.tsx          # fonts, theme provider, nav, sound effects
+    globals.css         # theme tokens (light/dark), grid, scrollbar
+  components/
+    terminal/           # window chrome, typewriter, boot gate
+    nav.tsx, links.tsx, theme-switcher.tsx, project-row.tsx
+    sound-effects.tsx   # delegated hover/click sound listeners
+  data/
+    projects.ts         # curated project list
+    experience.ts       # work history
+  lib/
+    sound.ts            # Web Audio synth + playback helpers
+    languages.ts        # language -> accent color map
+public/
+  cv.pdf                # résumé
+```
+
+## Content
+
+Projects and experience are plain data — edit `src/data/projects.ts` and
+`src/data/experience.ts`. Replace `public/cv.pdf` with your own résumé.
 
 ## Contact
 
-You can reach me through the social links on the homepage.
+Reach me through the social links on the homepage (GitHub, LinkedIn, email).
