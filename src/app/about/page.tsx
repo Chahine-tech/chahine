@@ -24,9 +24,9 @@ export default function About() {
             working on Generative AI, and before that shipped software at{' '}
             <span className="text-text">Adcoin</span>, a fintech startup. Most
             recently I co-founded{' '}
-            <span className="text-text">Foxcase</span> with a friend — wearing
-            every hat from product to architecture — and I&apos;m now looking
-            for my next full-time role.
+            <span className="text-text">Foxcase</span>{' '}
+            with a friend — wearing every hat from product to architecture — and
+            I&apos;m now looking for my next full-time role.
           </p>
           <p>
             I work across the stack — from product engineering to backend and

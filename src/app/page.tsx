@@ -52,9 +52,10 @@ export default function Home() {
           <span className="text-text">TypeScript</span>,{' '}
           <span className="text-text">Go</span>, and{' '}
           <span className="text-text">Rust</span>. I recently spent a year
-          co-founding <span className="text-text">Foxcase</span>, and I&apos;m
-          now looking for my next full-time role. Always exploring the
-          intersection of AI, systems, and good engineering.
+          co-founding{' '}
+          <span className="text-text">Foxcase</span>, and I&apos;m now looking
+          for my next full-time role. Always exploring the intersection of AI,
+          systems, and good engineering.
         </p>
 
         <div className="h-4" />
